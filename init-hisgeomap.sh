@@ -16,8 +16,7 @@ then
     ./prepare-docker.sh
 
     # create swapfile
-    ./prepare-swap.sh
-
+    # ./prepare-swap.sh
 fi
 
 
