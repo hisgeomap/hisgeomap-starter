@@ -1,5 +1,6 @@
-# $1 : mode("DEPLOY", "START")
-# $2 : proudction mode("DEV", "PROD")
+# Currently Supported & Tested Platform:
+#   Mac OS X 10.14.6+
+#   Ubuntu 18.
 
 # ENV
 HISGEOMAP_ROOT_DIR=~/hisgeomap;
@@ -10,13 +11,15 @@ export HISGEOMAP_MODE;
 
 
 # install required dev tools
-if [ "$1" = "START" ];
-then
-    # install docker
-    ./prepare-docker.sh
 
-    # create swapfile
-    # ./prepare-swap.sh
+# install docker
+if ! [ -x "$(command -v docker)" ]; then
+    ./prepare-docker.sh
+fi
+
+# install yarn
+if ! [ -x "$(command -v yarn)" ]; then
+    ./prepare-yarn.sh
 fi
 
 
@@ -33,7 +36,7 @@ fi
 ./install-back-end.sh
 ./install-docker.sh
 
-if [ ! "$2" = "DEV" ]; then
+if [ ! $HISGEOMAP_MODE = "DEV" ]; then
     # build
     ./build-front-end.sh
     ./build-back-end.sh
