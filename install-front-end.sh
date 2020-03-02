@@ -1,7 +1,7 @@
 GITHUB_REPO=https://github.com/hisgeomap/hisgeomap-web.git
 FRONT_END_ROOT_DIR=$HISGEOMAP_ROOT_DIR/front-end
 
-if [ ! -e "$HISGEOMAP_ROOT_DIR" ]; then
+if [ ! -e "$FRONT_END_ROOT_DIR" ]; then
     mkdir $FRONT_END_ROOT_DIR;
     cd $FRONT_END_ROOT_DIR;
 
