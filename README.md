@@ -4,8 +4,19 @@ Some Automation Shell Scripts on building, installing, deploying HisGeoMap Web A
 ## Basic Usage
 First, give all shell scripts good permission for running. For example: <br/>
 
-<code> chmod 777 ./*.sh </code><br/>
+``` chmod 777 ./*.sh ```
+
+Then, in <code>init-hisgeomap.sh</code>, config the root directory and mode for the application and save. (Default root dir is set to <code>~/hisgeomap</code>): <br/>
+
+```
+# ENV
+
+HISGEOMAP_ROOT_DIR=~/hisgeomap;
+  
+HISGEOMAP_MODE=DEV
+```
 
 Then, run the following script: <br/>
 
-<code>./init-hisgeomap START PROD</code>
+``` ./init-hisgeomap START PROD```
+ 
