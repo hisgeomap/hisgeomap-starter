@@ -17,6 +17,11 @@ if ! [ -x "$(command -v docker)" ]; then
     ./prepare-docker.sh
 fi
 
+# install docker-compose
+if ! [ -x "$(command -v docker-compose)" ]; then
+    ./prepare-docker-compose.sh
+fi
+
 # install yarn
 if ! [ -x "$(command -v yarn)" ]; then
     ./prepare-yarn.sh
@@ -36,7 +41,7 @@ fi
 ./install-back-end.sh
 ./install-docker.sh
 
-if [ ! $HISGEOMAP_MODE = "DEV" ]; then
+# if [ ! $HISGEOMAP_MODE = "DEV" ]; then
     # build
     ./build-front-end.sh
     ./build-back-end.sh
@@ -44,5 +49,5 @@ if [ ! $HISGEOMAP_MODE = "DEV" ]; then
 
     # deploy
     docker stack deploy --compose-file $HISGEOMAP_ROOT_DIR/docker/docker-compose.yml hisgeomap
-fi
+# fi
 
