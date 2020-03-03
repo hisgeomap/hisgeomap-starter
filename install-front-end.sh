@@ -1,3 +1,5 @@
+. "$(dirname "$0")"/env.config
+
 GITHUB_REPO=https://github.com/hisgeomap/hisgeomap-web.git
 FRONT_END_ROOT_DIR=$HISGEOMAP_ROOT_DIR/front-end
 

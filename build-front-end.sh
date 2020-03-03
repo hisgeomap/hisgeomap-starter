@@ -1,3 +1,4 @@
+. "$(dirname "$0")"/env.config;
 # front end
 FRONT_END_ROOT_DIR=$HISGEOMAP_ROOT_DIR/front-end
 

@@ -1,4 +1,5 @@
 # back end
+. "$(dirname "$0")"/env.config;
 BACK_END_ROOT_DIR=$HISGEOMAP_ROOT_DIR/back-end
 
 cd $BACK_END_ROOT_DIR;

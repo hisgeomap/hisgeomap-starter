@@ -2,29 +2,24 @@
 #   Mac OS X 10.14.6+
 #   Ubuntu 18.
 
-# ENV
-HISGEOMAP_ROOT_DIR=~/hisgeomap;
-HISGEOMAP_MODE=DEV
-
-export HISGEOMAP_ROOT_DIR;
-export HISGEOMAP_MODE;
+. "$(dirname "$0")"/env.config;
 
 
 # install required dev tools
 
 # install docker
 if ! [ -x "$(command -v docker)" ]; then
-    ./prepare-docker.sh
+    $HISGEOMAP_SCRIPTS_DIR/prepare-docker.sh
 fi
 
 # install docker-compose
 if ! [ -x "$(command -v docker-compose)" ]; then
-    ./prepare-docker-compose.sh
+    $HISGEOMAP_SCRIPTS_DIR/prepare-docker-compose.sh
 fi
 
 # install yarn
 if ! [ -x "$(command -v yarn)" ]; then
-    ./prepare-yarn.sh
+    $HISGEOMAP_SCRIPTS_DIR/prepare-yarn.sh
 fi
 
 
@@ -37,17 +32,17 @@ else
 fi
 
 # install
-./install-front-end.sh
-./install-back-end.sh
-./install-docker.sh
+$HISGEOMAP_SCRIPTS_DIR/install-front-end.sh
+$HISGEOMAP_SCRIPTS_DIR/install-back-end.sh
+$HISGEOMAP_SCRIPTS_DIR/install-docker.sh
 
 # if [ ! $HISGEOMAP_MODE = "DEV" ]; then
     # build
-    ./build-front-end.sh
-    ./build-back-end.sh
-    ./build-docker.sh
+    $HISGEOMAP_SCRIPTS_DIR/build-front-end.sh
+    $HISGEOMAP_SCRIPTS_DIR/build-back-end.sh
+    $HISGEOMAP_SCRIPTS_DIR/build-docker.sh
 
     # deploy
-    docker stack deploy --compose-file $HISGEOMAP_ROOT_DIR/docker/docker-compose.yml hisgeomap
+    $HISGEOMAP_SCRIPTS_DIR/deploy.sh
 # fi
 
