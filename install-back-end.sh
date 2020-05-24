@@ -1,5 +1,6 @@
 . "$(dirname "$0")"/env.config;
-GITHUB_REPO=https://github.com/hisgeomap/hisgeomap-services.git
+# GITHUB_REPO=https://github.com/hisgeomap/hisgeomap-services.git
+GITHUB_REPO=https://gitee.com/hisgeomap_hisgeomap/hisgeomap-services.git
 BACK_END_ROOT_DIR=$HISGEOMAP_ROOT_DIR/back-end
 
 if [ ! -e "$BACK_END_ROOT_DIR" ]; then

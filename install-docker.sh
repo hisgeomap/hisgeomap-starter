@@ -1,6 +1,8 @@
 . "$(dirname "$0")"/env.config
 
-GITHUB_REPO=https://github.com/TreeNewBeeing/hisgeomap-docker.git
+# GITHUB_REPO=https://github.com/TreeNewBeeing/hisgeomap-docker.git
+GITHUB_REPO=https://gitee.com/hisgeomap_hisgeomap/hisgeomap-docker.git
+
 DOCKER_ROOT_DIR=$HISGEOMAP_ROOT_DIR/docker
 
 if [ ! -e "$DOCKER_ROOT_DIR" ]; then
